@@ -200,8 +200,13 @@ local function update_async(
 			"Failed to retrieve data store '" .. self._data_store_name .. "'"
 		)
 		local entry = data_store.data[full_key]
+		if not entry then
+			local new_entry = storage.internal_data_entry_new(full_key)
+			data_store.data[full_key] = new_entry
+			entry = new_entry
+		end
 
-		local prev_ver = entry and entry.versions[#entry.versions]
+		local prev_ver = entry.versions[#entry.versions]
 
 		local res, user_ids, metadata = transform(
 			prev_ver and prev_ver.data,
