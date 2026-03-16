@@ -50,7 +50,7 @@ jobs:
       - name: Checkout Project
         uses: actions/checkout@v5
 
-      - name: Download luaulog Build
+      - name: Download mock-data-store Build
         uses: actions/download-artifact@v6
         with:
           name: build

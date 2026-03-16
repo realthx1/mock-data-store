@@ -2,7 +2,7 @@
 **Complete mock implementation of DataStoreService**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
-[![pesde](https://img.shields.io/github/v/tag/realthx1/mock_data_store?&style=for-the-badge&label=pesde)](https://pesde.dev/packages/realthx1/luaulog)
+[![pesde](https://img.shields.io/github/v/tag/realthx1/mock_data_store?&style=for-the-badge&label=pesde)](https://pesde.dev/packages/realthx1/mock_data_store)
 
 ## Installation
 Using [**pesde**](https://pesde.dev/):

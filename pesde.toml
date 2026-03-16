@@ -2,7 +2,7 @@ name = "realthx1/mock_data_store"
 version = "0.1.0"
 description = "Complete mock implementation of DataStoreService"
 authors = ["realthx1"]
-repository = "https://github.com/Rensselaer-County/mock-data-store"
+repository = "https://github.com/realthx1/mock-data-store"
 license = "MIT"
 includes = ["src/**/*", "pesde.toml", "README.md", "LICENSE", ".luaurc"]
 
