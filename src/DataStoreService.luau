@@ -23,6 +23,7 @@ local function get_data_store(
 	scope: string?,
 	options: DataStoreOptions?
 ): data_store.MockDataStore
+	name = utils.num_to_str(name)
 	utils.arg_assert(name, "string", 2)
 	utils.arg_assert(scope, "string", 3, true)
 	utils.arg_assert(options, "DataStoreOptions", 4, true)
@@ -52,6 +53,7 @@ local function get_ordered_data_store(
 	name: string,
 	scope: string?
 ): ordered_data_store.MockOrderedDataStore
+	name = utils.num_to_str(name)
 	utils.arg_assert(name, "string", 2)
 	utils.arg_assert(scope, "string", 3, true)
 

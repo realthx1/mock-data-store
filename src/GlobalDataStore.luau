@@ -23,6 +23,7 @@ local function remove_async(
 	self: RawMockGlobalDataStore,
 	key: string
 ): (any?, data_store_key_info.MockDataStoreKeyInfo?)
+	key = utils.num_to_str(key)
 	utils.arg_assert(key, "string", 2)
 
 	local full_key = utils.full_key(self._scope, key, self._all_scopes)
@@ -79,6 +80,7 @@ local function set_async(
 	user_ids: { number }?,
 	options: DataStoreSetOptions?
 ): string?
+	key = utils.num_to_str(key)
 	utils.arg_assert(key, "string", 2)
 	utils.arg_assert(user_ids, "string", 4, true)
 	utils.arg_assert(options, "DataStoreSetOptions", 5, true)
@@ -129,6 +131,7 @@ local function get_async(
 	key: string,
 	options: DataStoreGetOptions?
 ): (any?, data_store_key_info.MockDataStoreKeyInfo?)
+	key = utils.num_to_str(key)
 	utils.arg_assert(key, "string", 2)
 	utils.arg_assert(options, "DataStoreGetOptions", 3, true)
 
@@ -147,6 +150,7 @@ local function get_async(
 			"Failed to retrieve data store '" .. self._data_store_name .. "'"
 		)
 		local entry = data_store.data[full_key]
+		if not entry then return end
 
 		local ver = entry.versions[#entry.versions]
 		if not ver or ver.data == nil then return nil, nil end
@@ -170,6 +174,7 @@ local function update_async(
 		data_store_key_info.MockDataStoreKeyInfo?
 	) -> (any?, { number }?, { [string]: any }?)
 ): (any?, data_store_key_info.MockDataStoreKeyInfo?)
+	key = utils.num_to_str(key)
 	utils.arg_assert(key, "string", 2)
 	utils.arg_assert(transform, "function", 3)
 
@@ -196,10 +201,10 @@ local function update_async(
 		)
 		local entry = data_store.data[full_key]
 
-		local prev_ver = entry.versions[#entry.versions]
+		local prev_ver = entry and entry.versions[#entry.versions]
 
 		local res, user_ids, metadata = transform(
-			prev_ver.data,
+			prev_ver and prev_ver.data,
 			prev_ver
 				and data_store_key_info.new(
 					prev_ver.version,
@@ -241,6 +246,8 @@ local function increment_async(
 	user_ids: { number }?,
 	options: DataStoreIncrementOptions?
 ): string?
+	key = utils.num_to_str(key)
+	delta = utils.str_to_num(delta)
 	utils.arg_assert(key, "string", 2)
 	utils.arg_assert(delta, "number", 3)
 	utils.arg_assert(user_ids, "table", 4, true)

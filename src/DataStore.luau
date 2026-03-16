@@ -21,6 +21,7 @@ local function get_version_async(
 	key: string,
 	version: string
 ): (any?, data_store_key_info.MockDataStoreKeyInfo?)
+	key = utils.num_to_str(key)
 	utils.arg_assert(key, "string", 2)
 	utils.arg_assert(version, "string", 3, true)
 
@@ -56,6 +57,8 @@ local function get_version_at_time_async(
 	key: string,
 	timestamp: number
 ): (any?, data_store_key_info.MockDataStoreKeyInfo?)
+	key = utils.num_to_str(key)
+	timestamp = utils.str_to_num(timestamp)
 	utils.arg_assert(key, "string", 2)
 	utils.arg_assert(timestamp, "number", 3, true)
 
@@ -92,6 +95,10 @@ local function list_versions_async(
 	max_time: number?,
 	pagesize: number?
 ): data_store_version_pages.MockDataStoreVersionPages
+	key = utils.num_to_str(key)
+	min_time = utils.str_to_num(min_time)
+	max_time = utils.str_to_num(max_time)
+	pagesize = utils.str_to_num(pagesize)
 	pagesize = pagesize or 1024
 	sort_dir = sort_dir or Enum.SortDirection.Ascending
 
@@ -166,6 +173,7 @@ local function list_keys_async(
 	cursor: string?,
 	exclude_deleted: boolean?
 ): data_store_key_pages.MockDataStoreKeyPages
+	pagesize = utils.str_to_num(pagesize)
 	pagesize = pagesize or 50
 
 	utils.arg_assert(prefix, "string", 2, true)

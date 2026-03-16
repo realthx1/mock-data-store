@@ -18,6 +18,9 @@ local function get_sorted_async(
 	min_value: number?,
 	max_value: number?
 ): data_store_pages.MockDataStorePages
+	pagesize = utils.str_to_num(pagesize)
+	min_value = utils.str_to_num(min_value)
+	max_value = utils.str_to_num(max_value)
 	pagesize = pagesize or 50
 
 	utils.arg_assert(pagesize, "number", 2)

@@ -5,7 +5,7 @@ local data_store_info = require("./DataStoreInfo")
 
 --- https://create.roblox.com/docs/reference/engine/classes/DataStoreListingPages
 local mod = {}
-local class_scope = setmetatable({}, { __index = pages })
+local class_scope = setmetatable({}, { __index = pages.class_scope })
 
 export type RawMockDataStoreListingPages =
 	pages.RawMockPages<number, data_store_info.MockDataStoreInfo>

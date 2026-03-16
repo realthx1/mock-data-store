@@ -5,7 +5,7 @@ local data_store_key = require("./DataStoreKey")
 
 --- https://create.roblox.com/docs/reference/engine/classes/DataStorePages
 local mod = {}
-local class_scope = setmetatable({}, { __index = pages })
+local class_scope = setmetatable({}, { __index = pages.class_scope })
 
 export type RawMockDataStoreKeyPages = pages.RawMockPages<number, data_store_key.MockDataStoreKey> & { Cursor: string }
 export type MockDataStoreKeyPages = setmetatable<RawMockDataStoreKeyPages, { __index: typeof(class_scope) }>

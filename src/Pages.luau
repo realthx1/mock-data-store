@@ -4,7 +4,7 @@
 local instance = require("./Instance")
 
 local mod = {}
-local class_scope = setmetatable({}, { __index = instance })
+local class_scope = setmetatable({}, { __index = instance.class_scope })
 
 export type RawMockPages<K = any, V = any> = {
 	IsFinished: boolean,
