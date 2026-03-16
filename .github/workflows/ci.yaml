@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: ["main"]
-  pull_request: true
+  pull_request:
 
 concurrency:
   # Ensure this workflow does not run twice at the same time
