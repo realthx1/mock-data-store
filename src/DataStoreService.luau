@@ -98,8 +98,11 @@ local function list_data_stores_async(
 	for page_num = 1, pages_num do
 		local page = {}
 		for i = cursor_num + ((page_num - 1) * pagesize), math.min(cursor_num + page_num * pagesize - 1, #keys) do
-			local data_store = data_stores[keys[i]]
-			table.insert(page, data_store_info.new(keys[i], data_store.update_timestamp, data_store.update_timestamp))
+			local data_store_obj = data_stores[keys[i]]
+			table.insert(
+				page,
+				data_store_info.new(keys[i], data_store_obj.update_timestamp, data_store_obj.update_timestamp)
+			)
 		end
 		table.insert(pages, page)
 	end

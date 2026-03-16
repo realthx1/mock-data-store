@@ -34,7 +34,7 @@ local function get_sorted_async(
 	local data_mass = data_store.data
 
 	local ordered_keys: { string } = {}
-	for k, v in data_mass do
+	for k in data_mass do
 		table.insert(ordered_keys, k)
 	end
 	table.sort(ordered_keys, function(k1: string, k2: string)

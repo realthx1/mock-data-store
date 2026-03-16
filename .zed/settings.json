@@ -22,13 +22,7 @@
     "luau-lsp": {
       "settings": {
         "luau-lsp": {
-          "ignoreGlobs": [
-            "*_packages/**",
-            "out/**",
-            ".pesde/**",
-            ".typedefs/**",
-            "build/**",
-          ],
+          "ignoreGlobs": ["*_packages/**", ".pesde/**"],
           "sourcemap": {
             "autogenerate": true,
             "rojoProjectFile": "default.project.json",
