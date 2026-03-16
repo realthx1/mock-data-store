@@ -19,10 +19,10 @@ TODO
 Refer to [the original documentation](https://create.roblox.com/docs/reference/engine/classes/DataStoreService) for methods and classes related to a created mock DataStoreService.
 
 ## Deviations
-TODO
-Currently, almost no methods throw errors with original error messages, this will be fixed in the future.
-Throttling and request limits are currently not simulated.
-Yielding is not checked.
-Some data may not be copied, but used as passed instead.
-There are no GetRequestBudgetForRequestType and SetRateLimitForRequestType methods.
-Deprecated and unlisted methods/properties are not implemented.
+* TODO
+* Currently, almost no methods throw errors with original error messages, this will be fixed in the future.
+* Throttling and request limits are currently not simulated.
+* Yielding is not checked.
+* Some data may not be copied, but used as passed instead.
+* There are no GetRequestBudgetForRequestType and SetRateLimitForRequestType methods.
+* Deprecated and unlisted methods/properties are not implemented.
