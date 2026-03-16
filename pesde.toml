@@ -1,5 +1,5 @@
 name = "realthx1/mock_data_store"
-version = "0.1.0"
+version = "0.1.1"
 description = "Complete mock implementation of DataStoreService"
 authors = ["realthx1"]
 repository = "https://github.com/realthx1/mock-data-store"
