@@ -1,0 +1,15 @@
+{
+  "name": "test",
+  "tree": {
+    "$className": "DataModel",
+
+    "ServerScriptService": {
+      "test": {
+        "$path": "test",
+        "mock_data_store": {
+          "$path": "src"
+        }
+      }
+    }
+  }
+}
