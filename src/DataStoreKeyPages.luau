@@ -7,7 +7,7 @@ local data_store_key = require("./DataStoreKey")
 local mod = {}
 local class_scope = setmetatable({}, { __index = pages.class_scope })
 
-export type RawMockDataStoreKeyPages = pages.RawMockPages<number, data_store_key.MockDataStoreKey> & { Cursor: string }
+export type RawMockDataStoreKeyPages = pages.RawMockPages<data_store_key.MockDataStoreKey> & { Cursor: string }
 export type MockDataStoreKeyPages = setmetatable<RawMockDataStoreKeyPages, { __index: typeof(class_scope) }>
 
 local function new(data_pages: { { data_store_key.MockDataStoreKey } }, cursor_offset: number): MockDataStoreKeyPages

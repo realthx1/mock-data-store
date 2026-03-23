@@ -6,7 +6,7 @@ local pages = require("./Pages")
 local mod = {}
 local class_scope = setmetatable({}, { __index = pages.class_scope })
 
-export type RawMockDataStorePages = pages.RawMockPages<number, { key: string, value: number }>
+export type RawMockDataStorePages = pages.RawMockPages<{ key: string, value: number }>
 export type MockDataStorePages = setmetatable<RawMockDataStorePages, { __index: typeof(class_scope) }>
 
 local function new(data_pages: { { { key: string, value: number } } }): MockDataStorePages

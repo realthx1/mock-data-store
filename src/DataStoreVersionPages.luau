@@ -8,7 +8,6 @@ local mod = {}
 local class_scope = setmetatable({}, { __index = pages.class_scope })
 
 export type RawMockDataStoreVersionPages = pages.RawMockPages<
-	number,
 	data_store_object_version_info.MockDataStoreObjectVersionInfo
 >
 export type MockDataStoreVersionPages = setmetatable<RawMockDataStoreVersionPages, { __index: typeof(class_scope) }>

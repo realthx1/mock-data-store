@@ -7,9 +7,7 @@ local data_store_info = require("./DataStoreInfo")
 local mod = {}
 local class_scope = setmetatable({}, { __index = pages.class_scope })
 
-export type RawMockDataStoreListingPages =
-	pages.RawMockPages<number, data_store_info.MockDataStoreInfo>
-	& { Cursor: string }
+export type RawMockDataStoreListingPages = pages.RawMockPages<data_store_info.MockDataStoreInfo> & { Cursor: string }
 export type MockDataStoreListingPages = setmetatable<RawMockDataStoreListingPages, { __index: typeof(class_scope) }>
 
 local function new(
