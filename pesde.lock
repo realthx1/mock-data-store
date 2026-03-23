@@ -2,7 +2,7 @@
 # It is not intended for manual editing.
 format = 2
 name = "realthx1/mock_data_store"
-version = "0.1.2"
+version = "0.1.3"
 target = "roblox"
 
 [graph."0x5eal/unzip@0.2.0 luau".pkg_ref]
@@ -145,22 +145,22 @@ option = [{ name = "lukadev_0/option", version = "^1.2.1", index = "https://gith
 result = [{ name = "lukadev_0/result", version = "^1.2.1", index = "https://github.com/pesde-pkg/index" }, "standard"]
 toolchainlib = [{ name = "pesde/toolchainlib", version = "^0.2.2", index = "https://github.com/pesde-pkg/index", target = "lune" }, "standard"]
 
-[graph."pesde/stylua@2.3.1 lune"]
+[graph."pesde/stylua@2.4.0 lune"]
 direct = ["stylua", { name = "pesde/stylua", version = "^2.3.1", index = "default", target = "lune" }, "dev"]
 
-[graph."pesde/stylua@2.3.1 lune".dependencies]
+[graph."pesde/stylua@2.4.0 lune".dependencies]
 option = ["lukadev_0/option@1.2.1 lune", "standard"]
 result = ["lukadev_0/result@1.2.1 lune", "standard"]
 toolchainlib = ["pesde/toolchainlib@0.2.2 lune", "standard"]
 
-[graph."pesde/stylua@2.3.1 lune".pkg_ref]
+[graph."pesde/stylua@2.4.0 lune".pkg_ref]
 ref_ty = "pesde"
 index_url = "https://github.com/pesde-pkg/index"
 
-[graph."pesde/stylua@2.3.1 lune".pkg_ref.dependencies]
+[graph."pesde/stylua@2.4.0 lune".pkg_ref.dependencies]
 option = [{ name = "lukadev_0/option", version = "^1.2.1", index = "https://github.com/pesde-pkg/index" }, "standard"]
 result = [{ name = "lukadev_0/result", version = "^1.2.1", index = "https://github.com/pesde-pkg/index" }, "standard"]
-toolchainlib = [{ name = "pesde/toolchainlib", version = "^0.2.1", index = "https://github.com/pesde-pkg/index", target = "lune" }, "standard"]
+toolchainlib = [{ name = "pesde/toolchainlib", version = "^0.2.2", index = "https://github.com/pesde-pkg/index", target = "lune" }, "standard"]
 
 [graph."pesde/toolchainlib@0.2.2 lune".dependencies]
 dirs = ["jiwonz/dirs@0.6.0 lune", "standard"]
